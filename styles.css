@@ -1,0 +1,649 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts and Colors */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9e8fa;
+    color: #fffefa;
+    line-height: 1.8;
+}
+
+
+/* Hero Section */
+.hero-section {
+    background: url('bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    padding: 0 20px;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8); /* Subtle inner shadow for depth */
+    border: 10px dashed #ff6f00; /* Dashed border with vibrant orange color */
+    border-radius: 15px; /* Optional: rounded corners for a stamp effect */
+}
+
+/* Dark Overlay with Sunlight Gradient */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 165, 0, 0.95), rgba(255, 99, 71, 0.9), rgba(255, 99, 71, 0.9)); /* Warm gradient blending orange, coral, and pink */
+    z-index: 0;
+}
+
+
+
+/* Logo Styling */
+.hero-logo {
+    max-width: 180px;
+    margin-bottom: 20px;
+    border-radius: 35%;
+    border: 5px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.8), rgba(255, 69, 0, 0.8));
+    padding: 10px;
+    position: relative;
+}
+/* Hover Effect for Logo */
+.hero-logo:hover {
+    transform: scale(1.2) rotate(0deg); /* Enhanced zoom and rotation */
+    filter: brightness(1.5) saturate(180%);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 7px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Pulse Animation for Logo */
+.hero-logo::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 215, 0, 0.6);
+    animation: pulse 2s infinite;
+    z-index: -1;
+}
+
+/* Pulse Animation Keyframes */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.25);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+/* Hero Heading (h1) */
+.hero-section h1 {
+    font-size: 4em; /* Larger font size for prominence */
+    color: white; /* Change text color to white */
+    margin: 20px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-align: center;
+    font-family: 'Lora', serif;
+    position: relative;
+    transition: padding 0.3s ease-in-out; /* Add transition for padding effect */
+}
+
+.hero-section h1:hover {
+    padding: 10px 30px; /* Light padding effect on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle background color on hover */
+    border-radius: 5px; /* Optional rounded corners */
+}
+
+/* Custom Underline with Gradient */
+.hero-section h1::after {
+    content: '';
+    display: block;
+    width: 0%; /* Initial width of the underline (hidden) */
+    height: 5px; /* Thickness of the underline */
+    background: linear-gradient(135deg, #ff6f00, #f9c74f, #ffde59); /* Gradient for radiant effect */
+    margin-top: 10px;
+    border-radius: 5px; /* Rounded edges for the underline */
+    transition: width 0.4s ease; /* Animation speed */
+}
+
+/* Hover Effect for Underline */
+.hero-section h1:hover::after {
+    width: 100%; /* On hover, the width increases to 100% */
+    margin-left: 0; /* Ensure it aligns with the text */
+}
+
+/* Hero Paragraph (p) */
+.hero-section p {
+    font-size: 1.6em; /* Larger font size for better readability */
+    color: white; /* Text color set to white */
+    margin-top: 20px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    opacity: 0.9;
+    line-height: 1.8;
+    text-align: center;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+    font-family: 'Dancing Script', cursive; /* Handwritten font */
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent the text from breaking */
+    display: inline-block;
+    width: 0; /* Initial width for typewriter effect */
+    animation: typing 5s steps(50) 1s forwards; /* Typing effect with step-wise animation */
+}
+
+/* Typewriter animation */
+@keyframes typing {
+    0% {
+        width: 0; /* Start with 0 width */
+    }
+    100% {
+        width: 100%; /* End with full width */
+    }
+}
+
+/* Custom Underline with Gradient */
+.hero-section p::after {
+    content: '';
+    display: block;
+    width: 0%; /* Initial width of the underline (hidden) */
+    height: 5px; /* Thickness of the underline */
+    background: linear-gradient(135deg, #ff6f61, #ff3f34, #ff2a1d); /* Soft red light gradient */
+    margin-top: 10px;
+    border-radius: 5px; /* Rounded edges for the underline */
+    transition: width 0.4s ease; /* Animation speed */
+}
+
+/* Hover Effect for Underline */
+.hero-section p:hover::after {
+    width: 100%; /* On hover, the width increases to 100% */
+    margin-left: 0; /* Ensure it aligns with the text */
+}
+
+
+/* Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.0); /* Transparent background with 0.5 opacity */
+    padding: 10px 20px; /* Reduced padding */
+    border-top: 3px solid #d18b34;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    z-index: 10;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar List */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar List Items */
+.navbar ul li {
+    display: inline;
+}
+
+/* Navbar Links */
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff; /* White text for better contrast */
+    font-weight: bold;
+    font-size: 1.2em;
+    background: linear-gradient(45deg, rgba(255, 165, 0, 0.8), rgba(255, 99, 71, 0.8), rgba(255, 105, 180, 0.8)); /* Subtle gradient */
+    -webkit-background-clip: text; /* Clip the background gradient to text */
+    background-clip: text;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 10px; /* Padding for better click area */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Light shadow for depth */
+}
+
+/* Navbar Hover Effect */
+.navbar ul li a:hover {
+    color: #c0392b; /* Deep red on hover */
+    border-bottom: 3px solid #c0392b; /* Solid deep red underline */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.0); /* Subtle shadow for depth */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+
+/* Active Navbar Link */
+.navbar ul li a.active {
+    color: #ff6347; /* Coral color for active links */
+    font-weight: bolder; /* Make the active link stand out more */
+}
+
+
+/* Content Sections */
+.intro-section {
+    position: relative; /* To position the overlay relative to this container */
+    padding: 40px 20px;
+    text-align: center;
+    background: url('intro.gif') no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width of the page */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center;
+    overflow: hidden;
+    margin: 0; /* Ensure no margin around the section */
+}
+
+/* Add an overlay to reduce GIF intensity and apply gradient */
+.intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(201, 10, 169, 0.9), rgba(255, 165, 0, 0.9));
+; /* Darker orange to yellow gradient */
+    opacity: 0.9.5; /* Reduce overlay visibility slightly */
+    z-index: 1; /* Ensure the overlay is behind the text */
+    pointer-events: none; /* Allow interaction with content below */
+}
+
+/* Ensure the content appears on top of the overlay */
+.intro-section * {
+    position: relative;
+    z-index: 2; /* Raise text above overlay */
+}
+
+/* Content Sections Header */
+.intro-section h2 {
+    font-size: 4em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 15px;
+    position: relative;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    max-width: 90%;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.2s ease;
+}
+
+/* Hover Effect for Header */
+.intro-section h2:hover {
+    color: #ff6f61;
+    transform: translateY(-10px);
+    letter-spacing: 2px;
+}
+
+/* Custom Underline with Gradient */
+.intro-section h2::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(135deg, #ff6f61, #ff3f34, #ff2a1d);
+    margin-top: 15px;
+    border-radius: 5px;
+    transition: width 0.4s ease, margin-left 0.4s ease;
+}
+
+/* Hover Effect for Underline Expansion */
+.intro-section h2:hover::after {
+    width: 100%;
+    margin-left: 0;
+}
+
+/* Content Paragraph */
+.intro-section p {
+    font-size: 1.6em;
+    line-height: 1.6;
+    color: #fffff; /* Changed paragraph color to orange */
+    max-width: 90%;
+    padding: 20px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    font-family: 'Dancing Script', cursive; /* Handwritten font */
+    width: 100%; /* Ensures full width within the container */
+    box-sizing: border-box; /* Includes padding in the width calculation */
+}
+.highlight-text {
+    font-size: 2.5em; /* Increase font size to 2.5em */
+    font-weight: bold; /* Make the text bold */
+    color: #FFFFFF; /* Use a white color for the text */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for better visibility */
+    margin-top: 20px; /* Add some space above the text */
+    position: relative; /* Set position to relative for the pseudo-element */
+}
+
+.highlight-text::after {
+    content: ''; /* Create an empty element */
+    position: absolute; /* Position it absolutely within the element */
+    width: 100%; /* Make it as wide as the text */
+    height: 3px; /* Set the thickness of the underline */
+    background-color: #FFD700; /* Yellow color for the underline */
+    bottom: 0; /* Position it at the bottom of the text */
+    left: 0; /* Align it to the left */
+    transform: scaleX(0); /* Initially scale it to 0 (hidden) */
+    transform-origin: bottom right; /* Animate from the right */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.highlight-text:hover::after {
+    transform: scaleX(1); /* Scale to 1 (fully visible) on hover */
+    transform-origin: bottom left; /* Animate from the left */
+}
+
+
+
+/* Hover Effect for Paragraph */
+.intro-section p:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Highlighted Text in Paragraph */
+.intro-section p span {
+    font-weight: 700;
+    color: #ff6f00; /* Highlighted text in orange */
+}
+
+/* Make sure the content stays within the viewport */
+@media (max-width: 768px) {
+    .content-section h2 {
+        font-size: 3em; /* Reduce header size on smaller screens */
+    }
+
+    .content-section p {
+        font-size: 1em; /* Adjust paragraph font size */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+
+
+
+.facts-section {
+    background-image: 
+        url('states.gif'), /* Background image */
+        linear-gradient(135deg, rgba(255, 153, 51, 0.95), rgba(255, 255, 255, 0.95), rgba(19, 136, 8, 0.95), rgba(0, 0, 128, 0.95)); /* India Flag-inspired gradient with opacity */
+    background-size: cover; /* Ensure the image covers the whole section */
+    background-position: center center; /* Position the image centrally */
+    padding: 20px 20px;
+    text-align: center;
+    min-height: 100vh; /* Ensure the section takes up the full height of the viewport */
+    position: relative; /* To ensure the overlay works */
+    box-sizing: border-box; /* Prevents padding from affecting the layout */
+    overflow: hidden; /* Ensures content does not overflow */
+}
+
+.facts-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+background: linear-gradient(135deg, rgba(213, 53, 19, 0.9), rgba(255, 130, 0, 0.9));
+    z-index: 0; /* Places the overlay behind the content */
+}
+
+.facts-section * {
+    position: relative; /* Ensures all child elements appear above the overlay */
+    z-index: 1; /* Elevates content above the overlay */
+}
+
+
+.facts-section h2 {
+    font-size: 3.5em;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a nice text shadow */
+    position: relative; /* Needed for the pseudo-element positioning */
+    display: inline-block; /* Ensures the underline adjusts to the text width */
+    z-index: 1; /* Ensure the heading appears above the background */
+}
+
+.facts-section h2::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 5px; /* Thickness of the underline */
+    background-color: #ff9900; /* Color of the underline */
+    transition: width 0.3s ease; /* Animation for the underline */
+    position: absolute;
+    bottom: -1px; /* Adjusts the spacing below the text */
+    left: 0;
+}
+
+.facts-section h2:hover::after {
+    width: 100%; /* Expands the underline to the full width of the text */
+}
+
+.state-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Space between boxes */
+    z-index: 1; /* Ensure the boxes are visible above the background */
+}
+
+.state-box {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background to see the image */
+    border: 2px solid #dcdcdc;
+    border-radius: 10px; /* Slightly more rounded corners */
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    width: calc(20% - 20px); /* 5 boxes per row */
+    min-width: 180px; /* Ensure a minimum size */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Improved shadow for better depth */
+    border-radius: 12px;
+    z-index: 1; /* Ensure the boxes appear above the background */
+}
+
+.state-box:hover {
+    transform: translateY(-10px); /* Slightly more movement for hover effect */
+    box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect on hover */
+    background-color: #a21c6b;
+}
+
+@media (max-width: 1024px) {
+    .state-box {
+        width: calc(33.33% - 30px); /* 3 boxes per row for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .state-box {
+        width: calc(50% - 30px); /* 2 boxes per row for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .state-box {
+        width: 100%; /* 1 box per row for mobile devices */
+    }
+}
+
+
+
+
+/* Footer Section */
+.footer-section {
+    background: linear-gradient(45deg, #4d2b1f, #8c3f23);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures space is between form and rights text */
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    min-height: 100vh; /* Ensures the footer takes at least the full viewport height */
+}
+/* Content Sections Header */
+.footer-section h2 {
+    font-size: 4em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 15px;
+    position: relative;
+    color: #fffff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    max-width: 90%;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.2s ease;
+}
+
+/* Hover Effect for Header */
+.footer-section h2:hover {
+    color: #ff6f61;
+    transform: translateY(-10px);
+    letter-spacing: 2px;
+}
+
+/* Custom Underline with Gradient */
+.footer-section h2::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(135deg, #ff6f61, #ff3f34, #ff2a1d);
+    margin-top: 15px;
+    border-radius: 5px;
+    transition: width 0.4s ease, margin-left 0.4s ease;
+}
+
+/* Hover Effect for Underline Expansion */
+.content-section h2:hover::after {
+    width: 100%;
+    margin-left: 0;
+}
+
+
+
+/* Form Styling */
+.footer-section form {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Input and Textarea Styling */
+.footer-section input, 
+.footer-section textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #d18b34;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+.footer-section button {
+    padding: 15px 30px;
+    background: #ffde59;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #4d2b1f;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.footer-section button:hover {
+    background: #e3c53c;
+    transform: scale(1.05);
+}
+
+/* "All Rights Reserved" Styling */
+.rights-reserved {
+    text-align: center;
+    font-size: 1em;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    border-top: 1px solid #d18b34;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 20px; /* Adjusts the space between the form and the rights-reserved text */
+    margin-bottom: 20px; /* Adds a margin at the bottom for further spacing */
+}
+
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF9500; /* Vibrant orange */
+    color: white;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-align: center;
+    line-height: 50px; /* Centers the text inside */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #FF7700; /* Darker orange on hover */
+    transform: scale(1.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+#scrollToTopBtn:active {
+    transform: scale(1);
+}
+
+/* Remove the arrow from before pseudo-element */
+#scrollToTopBtn::before {
+    content: none;
+}

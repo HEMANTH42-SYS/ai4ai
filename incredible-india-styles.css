@@ -1,0 +1,441 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0b5394; /* Pink background */
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('change.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    height: 100vh; /* Ensures it covers the full height of the viewport */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero section overlay */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(1, 71, 74, 0.8); /* Semi-transparent blue overlay */
+    z-index: 1; /* Ensures it sits above the background but below the content */
+}
+/* Hero container styling */
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2; /* Ensures content stays on top of background */
+    color: #fff;
+}
+
+/* Logo Styling */
+.logo-container {
+    margin-bottom: 30px; /* Adds space below the logo */
+    display: inline-block;
+    transition: transform 0.3s ease-in-out; /* Smooth transformation on hover */
+}
+
+.hero-logo {
+    max-width: 150px;
+    height: auto;
+    border-radius: 25%; /* Makes the logo circular */
+    border: 3px solid #fff; /* Adds white border around logo */
+    filter: brightness(1.5); /* Normal brightness */
+
+}
+
+/* Hover Effect for Logo */
+.hero-logo:hover {
+    transform: scale(1.2) rotate(0deg); /* Slightly enlarges and rotates the logo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Adds a shadow effect on hover */
+}
+
+/* Logo Animation */
+@keyframes logoAnimation {
+    0% {
+        transform: scale(0.8) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Animation applied when the page loads */
+.hero-logo {
+    animation: logoAnimation 2s ease-out infinite; /* Infinite animation loop */
+}
+
+/* Responsive Logo on smaller screens */
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 120px; /* Adjust logo size for smaller screens */
+    }
+}
+
+
+/* Hero Section Heading */
+.hero-section h1 {
+    font-size: 4.5em; /* Increased font size */
+    margin-bottom: 20px;
+    letter-spacing: 2px; /* Adds spacing between letters */
+    line-height: 1.2; /* Adjusts line height for readability */
+}
+
+/* Hero Section Subheading */
+.hero-section p {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    line-height: 1.5; /* More comfortable line height */
+}
+
+/* Hero Buttons */
+.hero-buttons .btn {
+    background-color: #ad0755;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    font-size: 1.1em; /* Increased font size for better readability */
+    display: inline-block;
+}
+
+.hero-buttons .btn:hover {
+    background-color: #ad8107;
+    transform: scale(1.1); /* Slightly enlarges the button on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+.hero-buttons .btn:active {
+    transform: scale(1); /* Ensures button goes back to normal size when clicked */
+    box-shadow: none; /* Removes the shadow on active state */
+}
+
+/* Hero Section - Adjustments on smaller screens */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3.5em; /* Slightly reduced font size for tablets */
+    }
+
+    .hero-section p {
+        font-size: 1.6em; /* Slightly reduced font size */
+    }
+
+    .hero-buttons .btn {
+        padding: 10px 25px; /* Adjust button size */
+        font-size: 1em; /* Slightly smaller font for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2.8em; /* Reduced font size for mobile screens */
+    }
+
+    .hero-section p {
+        font-size: 1.4em; /* Reduced font size */
+    }
+
+    .hero-buttons .btn {
+        padding: 10px 20px; /* Reduced button padding */
+        font-size: 0.9em; /* Reduced font size */
+    }
+}
+
+/* For further small screen adjustments */
+@media (max-width: 320px) {
+    .hero-section h1 {
+        font-size: 2.2em; /* Further reduced font size for very small screens */
+    }
+
+    .hero-section p {
+        font-size: 1.2em; /* Further reduced font size */
+    }
+
+    .hero-buttons .btn {
+        padding: 8px 18px; /* Smaller buttons for very small screens */
+    }
+}
+
+
+/* Horizontal Rocket Line Animation */
+.rocket-line {
+    width: 0; /* Start with no width */
+    height: 5px; /* Thickness of the line */
+    background-color: #fad13c; /* Line color */
+    margin: 20px auto; /* Center align below text */
+    transition: width 1s ease-in-out; /* Smooth transition for width */
+    animation: rocketLaunchHorizontal 10s ease-in-out forwards; /* Apply animation */
+}
+
+/* Horizontal Rocket Launch Keyframes */
+@keyframes rocketLaunchHorizontal {
+    0% {
+        width: 0; /* Start with no width */
+        opacity: 0; /* Initially hidden */
+    }
+    50% {
+        width: 60%; /* Midway width */
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        width: 80%; /* Final width */
+        opacity: 1; /* Fully visible at the end */
+    }
+}
+
+/* Adjust Line on Smaller Screens */
+@media (max-width: 768px) {
+    .rocket-line {
+        animation: rocketLaunchHorizontal 2s ease-in-out forwards;
+    }
+}
+
+@media (max-width: 480px) {
+    .rocket-line {
+        height: 3px; /* Slightly thinner line */
+    }
+}
+
+.telugu-caption {
+    font-family: "NTR", "Gautami", sans-serif; /* Primary NTR font for Telugu */
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 40px;
+    font-weight: bold;
+    overflow: hidden; /* Ensures text stays within bounds */
+    white-space: nowrap; /* Prevents wrapping */
+    border-right: 3px solid #ffffff; /* Cursor effect */
+    animation: typing 3s steps(30, end), blink 0.5s step-end infinite alternate; /* Typing and blinking cursor */
+}
+
+/* Typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: #ffffff;
+    }
+}
+
+
+
+
+
+/* States and Union Territories Section */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3.5em;
+    margin-bottom: 40px;
+    color: #fffff;
+}
+
+.states-grid, .union-territories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.state, .ut {
+    background-color: #fff;
+    border: 2px solid #e2e2e2;
+    padding: 10px; /* Reduced padding */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure consistency in card height */
+}
+
+.state:hover, .ut:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.state a, .ut a {
+    text-decoration: none;
+    color: #4c2b82;
+}
+
+.state h3, .ut h3 {
+    font-size: 1.6em; /* Reduced font size */
+    color: #555;
+    margin-top: 10px;
+}
+
+.state a:hover h3, .ut a:hover h3 {
+    color: #ffb900; /* Yellow hover color */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    /* Adjust the heading size for smaller screens */
+    h2 {
+        font-size: 2em; /* Reduced font size */
+    }
+
+    /* Reduce grid gaps and padding on smaller screens */
+    .states-grid, .union-territories-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* More compact grid */
+        padding: 10px; /* Reduced padding */
+        gap: 10px; /* Reduced gap */
+    }
+
+    .state, .ut {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .state h3, .ut h3 {
+        font-size: 1.4em; /* Reduced font size */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce font size and padding for very small screens */
+    h2 {
+        font-size: 1.5em; /* Reduced font size */
+    }
+
+    .states-grid, .union-territories-grid {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+    }
+
+    .state, .ut {
+        padding: 8px; /* Further reduce padding */
+    }
+
+    .state h3, .ut h3 {
+        font-size: 1.2em; /* Further reduced font size */
+    }
+}
+
+/* Footer Section */
+.footer {
+    background-color: #700357;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 1em;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1.2em;
+    }
+
+    .states-grid, .union-territories-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .footer {
+        padding: 15px;
+    }
+}
+
+
+
+/* Scroll-to-Top Button Styling */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF9500; /* Vibrant orange */
+    color: white;
+    font-size: 24px; /* Adjusted font size for better balance */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-align: center;
+    line-height: 50px; /* Centers the text inside */
+    font-family: 'Arial', sans-serif; /* Ensures consistent font styling */
+}
+
+/* Hover Effect */
+#scrollToTopBtn:hover {
+    background-color: #FF7700; /* Darker orange on hover */
+    transform: scale(1.2); /* Slightly enlarge button */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Enhance shadow effect */
+}
+
+/* Active State Effect */
+#scrollToTopBtn:active {
+    transform: scale(1); /* Returns to normal size when clicked */
+    background-color: #FF5C00; /* Even darker orange for active state */
+}
+
+/* Remove pseudo-element styling */
+#scrollToTopBtn::before {
+    content: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #scrollToTopBtn {
+        width: 45px; /* Slightly smaller size for tablets */
+        height: 45px;
+        font-size: 20px; /* Adjusted font size */
+        line-height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    #scrollToTopBtn {
+        width: 40px; /* Further reduced size for mobile devices */
+        height: 40px;
+        font-size: 18px; /* Adjusted font size for smaller screens */
+        line-height: 40px;
+        bottom: 15px; /* Adjusted position */
+        right: 15px;
+    }
+}
